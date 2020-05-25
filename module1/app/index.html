@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+
+<head>
+    <title>LunchCheck app</title>
+</head>
+
+<body ng-controller="LunchCheckController">
+    <textarea ng-model="itemList"></textarea>
+    <button ng-click="checkIfTooMuch()">Check if Too Much</button>
+    <p>{{message}}</p>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
