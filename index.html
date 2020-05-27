@@ -1,71 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ShoppingListCheckOff">
+<html ng-app="LunchCheck">
 
 <head>
-    <title>Shopping List Check Off</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="module1/app/styles/bootstrap.min.css" />
-    <style>
-        .emptyMessage {
-            font-weight: bold;
-            color: red;
-            font-size: 1.2em;
-        }
-        
-        li {
-            margin-bottom: 7px;
-            font-size: 1.2em;
-        }
-        
-        li>button {
-            margin-left: 6px;
-        }
-        
-        button>span {
-            color: green;
-        }
-    </style>
+    <title>LunchCheck app</title>
 </head>
 
-<body>
-    <div class="container">
-        <h1>Shopping List Check Off</h1>
-
-        <div class="row">
-            </button>
-            <!-- To Buy List -->
-            <div class="col-md-6" ng-controller="ToBuyController as tobuyCtrl">
-                <h2>To Buy:</h2>
-                <ul>
-                    <li ng-repeat="item in tobuyCtrl.items">
-                        Buy {{item.quantity}} {{item.name}}
-                        <button class="btn btn-default" ng-click="tobuyCtrl.bought($index)">
-                  <span class="glyphicon glyphicon-ok"></span> Bought
-                </button>
-                    </li>
-                </ul>
-                <div class="emptyMessage" ng-if="tobuyCtrl.items.length == 0">
-                    Everything is bought!
-                </div>
-            </div>
-
-            <!-- Already Bought List -->
-            <div class="col-md-6" ng-controller="AlreadyBoughtController as boughtCtrl">
-                <h2>Already Bought:</h2>
-                <ul>
-                    <li ng-repeat="item in boughtCtrl.items">
-                        Bought {{item.quantity}} {{item.name}}
-                    </li>
-                </ul>
-                <div class="emptyMessage" ng-if="boughtCtrl.items.length == 0">
-                    Nothing bought yet.
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <script src="./module2/app/angular.min.js"></script>
-    <script src="./module2/app/app.js"></script>
+<body ng-controller="LunchCheckController">
+    <textarea ng-model="itemList"></textarea>
+    <button ng-click="checkIfTooMuch()">Check if Too Much</button>
+    <p>{{message}}</p>
+    <script src="./module1/app/angular.min.js"></script>
+    <script src="./module1/app/app.jsq"></script>
 </body>
 
 </html>
